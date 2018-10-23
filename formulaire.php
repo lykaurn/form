@@ -73,6 +73,7 @@ if( !empty($nom) && !empty($prenom) && !empty($message) ){  // Envoi email
         if ( mail($to, $subject, $message_mail, $headers) ) // Envoi du message
         {
             echo 'Votre message a bien été envoyé ';
+            $_POST=array();
         }
         else // Non envoyé
         {
@@ -80,7 +81,7 @@ if( !empty($nom) && !empty($prenom) && !empty($message) ){  // Envoi email
 		}
 		
 		if( empty($nom) || empty($prenom) || empty($message) ){ 
-			$message_erreur = echo 'Veuillez remplir les champs suivants : ' . $resultat;
+			$message_erreur = $resultat;
 		}
 }
 
